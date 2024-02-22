@@ -1,0 +1,53 @@
+create database book_swap;
+use book_swap;
+
+## Role
+Insert into `book_swap`.`role` (`id`, `name`, `description`)
+Values (unhex(replace('550e8400-e29b-41d4-a716-446655440000','-','')), 'ADMIN', 'Administrator');
+
+Insert into `book_swap`.`role` (`id`, `name`, `description`)
+Values (unhex(replace('62c91bb6-c041-489e-b447-f7765906aeea','-','')), 'USER', 'User');
+
+## Authority
+Insert into `book_swap`.`authority` (`id`, `resource`, `permission`)
+value (unhex(replace('14b5ff21-22a9-452d-98fd-0c635f0edba4','-','')), 'BOOK','READ');
+
+Insert into `book_swap`.`authority` (`id`, `resource`, `permission`)
+value (unhex(replace('49c979d2-3210-4677-a994-9eed8e212267','-','')), 'BOOK', 'CREATE');
+
+Insert into `book_swap`.`authority` (`id`, `resource`, `permission`)
+value (unhex(replace('9f18d47b-3cb2-49f1-9090-a9b8fed76455','-','')), 'BOOK', 'MODIFY');
+
+Insert into `book_swap`.`authority` (`id`, `resource`, `permission`)
+value (unhex(replace('df31a672-e466-4312-97c5-b4d8f37c346b','-','')), 'BOOK', 'DELETE');
+
+Insert into `book_swap`.`authority` (`id`, `resource`, `permission`)
+value (unhex(replace('93afb1ab-fa11-4dd4-8390-d1ca5930e5de','-','')), 'PROFILE', 'READ');
+
+Insert into `book_swap`.`authority` (`id`, `resource`, `permission`)
+value (unhex(replace('de687961-c4b4-4671-b452-7d2d9a67eec4','-','')), 'PROFILE', 'MODIFY');
+
+#authority_role
+Insert into `book_swap`. `authority_role` (`role_id`, `authority_id`)
+value (unhex(replace('62c91bb6-c041-489e-b447-f7765906aeea','-','')),
+unhex(replace('14b5ff21-22a9-452d-98fd-0c635f0edba4','-','')));
+
+Insert into `book_swap`. `authority_role` (`role_id`, `authority_id`)
+value (unhex(replace('62c91bb6-c041-489e-b447-f7765906aeea','-','')),
+unhex(replace('49c979d2-3210-4677-a994-9eed8e212267','-','')));
+
+Insert into `book_swap`. `authority_role` (`role_id`, `authority_id`)
+value (unhex(replace('62c91bb6-c041-489e-b447-f7765906aeea','-','')),
+unhex(replace('9f18d47b-3cb2-49f1-9090-a9b8fed76455','-','')));
+
+Insert into `book_swap`. `authority_role` (`role_id`, `authority_id`)
+value (unhex(replace('62c91bb6-c041-489e-b447-f7765906aeea','-','')),
+unhex(replace('df31a672-e466-4312-97c5-b4d8f37c346b','-','')));
+
+Insert into `book_swap`. `authority_role` (`role_id`, `authority_id`)
+value (unhex(replace('62c91bb6-c041-489e-b447-f7765906aeea','-','')),
+unhex(replace('93afb1ab-fa11-4dd4-8390-d1ca5930e5de','-','')));
+
+Insert into `book_swap`. `authority_role` (`role_id`, `authority_id`)
+value (unhex(replace('62c91bb6-c041-489e-b447-f7765906aeea','-','')),
+unhex(replace('de687961-c4b4-4671-b452-7d2d9a67eec4','-','')));
